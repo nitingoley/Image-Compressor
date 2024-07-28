@@ -1,24 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="index.css">
   <link rel="icon" type="image/png" href="u1.png" style="border-radius:19px;">
-  <meta name="description"
-  content="Compress your Jpeg and Png images for online application forms, for your websites or sharing on Social Media">
-  </head>
-  <body>
-  <!-Navbar section below ->
-  <!- ______________________________________->
-  <div class="body">
+  <meta name="description" content="Compress your Jpeg and Png images for online application forms, for your websites or sharing on Social Media">
+</head>
+<body>
+  <!-- Navbar section -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/"><img src="f.png" alt="compress image" height="50px" width="50px"></a>
+    <a class="navbar-brand" href="#"><h5>Compressor</h5></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/blog">About</a>
@@ -26,57 +25,57 @@
         <li class="nav-item">
           <a class="nav-link" href="https://nitingoley.netlify.app">Contact us</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/SignUp">SignUp</a>
+        </li>
       </ul>
     </div>
   </nav>
-  <!- ______________________________________->
-  
-  
-  
-  <div class="heading" style="color: rgb(27, 58, 161);text-align: center;">
-    <h1>Compress Image size</h1>
+
+  <div class="container text-center mt-4">
+    <h1 class="heading">Compress Image Size</h1>
+    <br>
+    <div class="upload">
+      <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" id="image" accept="image/*" class="form-control-file">
+        <label for="image" class="btn btn-outline-primary">
+          <img src="upload.svg" alt="" class="img-icon"> Select File
+        </label>
+        <br><br>
+        <span class="file-info">Chosen File ::</span>
+        <span id="name-file">None</span>
+        <br><br>
+        <input type="submit" value="Upload" class="btn btn-primary" id="ubtn">
+        <h1 id="hen"></h1>
+      </form>
+    </div>
+    <br><br>
+    <div class="inst">
+      <h3>Some Instructions About This Service</h3>
+      <h4>How to Use This Service</h4>
+      <ul class="list-unstyled">
+        <li>Select any JPEG or PNG image</li>
+        <li>If you select any photo, then press the upload button</li>
+      </ul>
+    </div>
   </div>
-  <br>
-  
-  <div class="upload" style="text-align: center;">
-    <form class="" action="/" method="post" enctype="multipart/form-data">
-  <input type="file" name="image" id="image" accept="image/*">
-      <label for="image" style="color: rgb(27, 58, 161)"> <img  src="upload.svg" alt="" style="height:40px; color: rgb(27, 58, 161);"> &nbsp
-  <b style="color: rgb(27, 58, 161);">Select File</b></label><br> <br><span><b style="color: rgb(27, 58, 161);">Choosen File</b></span><span id="name-file">None</span>
-  
-  <br> <br>
-      <input style="background-color: rgb(27, 58, 161); width: 120px; border-radius: 8px; border-color: blue; color:white"; type="submit" name="" value="Upload" class="ubtn" id="ubtn">
-      <h1 id="hen"></h1>
-    </form>
-  </div>
-  <br><br>
-  <div class="inst" style="text-align: center;">
-    <h3 style="color: rgb(27, 58, 161)" >Some Instruction about this service</h3>
-   <h4 style="color: rgb(27, 58, 161)" class="inst-head">How to use this service</h4>
-   <ul style="text-decoration: none;">
-     <li style="color: rgb(27, 58, 161)"style="text-decoration: none;">Select any jpeg or png image</li>
-     <li style="color: rgb(27, 58, 161)">If you select any photo then press upload button</li>
-   </ul>
-  </div>
-  </div>
- 
-  <footer style="padding-top: 50px; text-align: center;">
+
+  <footer class="text-center mt-4">
     <p>© 2024 Nitin Goley. All rights reserved.</p>
   </footer>
 
-  </body>
   <script type="text/javascript">
-  let fil=document.getElementById('name-file');
-  let  image=document.getElementById('image');
-  image.addEventListener('change',(event)=>{
-   let uploaded=event.target.files[0].name;
-   fil.textContent=uploaded;
-  })
-  var a=document.getElementsByClassName('ubtn');
-  a[0].addEventListener('click',()=>{
-    var b=document.getElementById('hen');
-    b.innerHTML="File is uploading......";
-  })
+    let fil = document.getElementById('name-file');
+    let image = document.getElementById('image');
+    image.addEventListener('change', (event) => {
+      let uploaded = event.target.files[0].name;
+      fil.textContent = uploaded;
+    });
+    document.getElementById('ubtn').addEventListener('click', () => {
+      document.getElementById('hen').innerHTML = "File is uploading......";
+    });
   </script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>
